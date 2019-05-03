@@ -4,7 +4,7 @@ My journey learning cryptography. I am using [CommonLoungue](https://www.commonl
 
 A lot of the notes below are copied and pasted from the material provided by CommonLoungue. For more detailed information please refer to their material
 
-I will implement the algorithms in as many languages as I can. Python, JS and Java will be the initial languages. Feel free to implement in anyother language of your choice and make a pull request
+I will implement the algorithms in as many languages as I can. Python and JavaScript will be the initial languages. Feel free to implement in anyother language of your choice and make a pull request
 
 ## Intro
 
