@@ -1,5 +1,7 @@
 # Cryptography
 
+[![Build Status](https://travis-ci.org/KengoWada/Cryptography.svg?branch=master)](https://travis-ci.org/KengoWada/Cryptography) [![Coverage Status](https://coveralls.io/repos/github/KengoWada/Cryptography/badge.svg?branch=master)](https://coveralls.io/github/KengoWada/Cryptography?branch=master) [![Maintainability](https://api.codeclimate.com/v1/badges/747ce3b236ae76761589/maintainability)](https://codeclimate.com/github/KengoWada/Cryptography/maintainability)
+
 My journey learning cryptography. I am using [CommonLoungue](https://www.commonlounge.com) to learn cryptography. The course is free.
 
 A lot of the notes below are copied and pasted from the material provided by CommonLoungue. For more detailed information please refer to their material
