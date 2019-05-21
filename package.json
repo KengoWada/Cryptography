@@ -1,0 +1,44 @@
+{
+	"name": "cryptography",
+	"version": "1.0.0",
+	"description": "My journey learning cryptography",
+	"main": "crypto.js",
+	"nyc": {
+		"exclude": [
+			"nodemodules/*",
+			"coverage/*",
+			".nyc_output/*",
+			"tests/*"
+		]
+	},
+	"scripts": {
+		"test": "nyc --reporter=html --reporter=text mocha ./tests/",
+		"start": "node crypto.js",
+		"coverage": "nyc report --reporter=text-lcov | coveralls"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/KengoWada/Cryptography.git"
+	},
+	"keywords": [
+		"crypto",
+		"node",
+		"js"
+	],
+	"author": "Kengo Wada",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/KengoWada/Cryptography/issues"
+	},
+	"homepage": "https://github.com/KengoWada/Cryptography#readme",
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"coveralls": "^3.0.3",
+		"eslint": "^5.16.0",
+		"eslint-config-airbnb-base": "^13.1.0",
+		"eslint-plugin-import": "^2.17.2",
+		"mocha": "^6.1.4",
+		"mocha-lcov-reporter": "^1.3.0",
+		"nyc": "^14.1.1"
+	}
+}
