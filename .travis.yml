@@ -1,0 +1,13 @@
+language: node_js
+
+node_js:
+  - "10"
+
+install:
+  - npm install
+
+script:
+  - nyc --reporter=html --reporter=text mocha ./tests/*.js
+
+after_success:
+  - nyc report --reporter=text-lcov | coveralls
