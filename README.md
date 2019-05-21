@@ -4,15 +4,13 @@ My journey learning cryptography. I am using [CommonLoungue](https://www.commonl
 
 A lot of the notes below are copied and pasted from the material provided by CommonLoungue. For more detailed information please refer to their material
 
-I will implement the algorithms in as many languages as I can. Python and JavaScript will be the initial languages. Feel free to implement in anyother language of your choice and make a pull request
-
 ## Intro
 
 Cryptography deals with a set of methods which enable us to store and transmit information while safeguarding it from intruders.
 
 [Link](https://www.commonlounge.com/discussion/9570cd139bc3406d91127acc49d1b5ba) to detailed info
 
-### Branches of Cryptohraphy
+### Branches of Cryptography
 
 - **Cryptology** - is an umbrella term for the fields of cryptography and cryptanalysis
 
@@ -103,3 +101,33 @@ plaintext - 'Kengo'
 'o' - 'r'
 ciphertext - 'Nhqjr'
 ```
+
+## Implementation
+
+I will be implementing the algorithms in JavaScript.
+
+## Getting started
+
+- Clone the repo
+
+- `cd Cryptography`
+
+- Run `npm install`
+
+- Now run `npm start` and follow the prompts
+
+- Also run `npm test` to run the tests
+
+## Contributing
+
+- Fork the repo
+
+- Make the changes and write tests that pass
+
+- Document your changes at the bottom of the README
+
+- Create a pull request and add your name to the authors list
+
+### Authors
+
+- [Kengo Wada](https://githb.com/KengoWada)
