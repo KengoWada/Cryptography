@@ -8,7 +8,8 @@
 			"nodemodules/*",
 			"coverage/*",
 			".nyc_output/*",
-			"tests/*"
+			"tests/*",
+			"crypto.js"
 		]
 	},
 	"scripts": {
