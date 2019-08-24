@@ -1,31 +1,30 @@
-const caeserEncrypt = (plainText) => {
-  let cipherText = '';
-  [...plainText].forEach((character) => {
-    const newCharacterAscii = (character.charCodeAt() + 3) % 127;
+const caeserEncrypt = plainText => {
+	let cipherText = '';
 
-    if (newCharacterAscii < 32) {
-      cipherText += String.fromCharCode(32 + newCharacterAscii);
-    } else {
-      cipherText += String.fromCharCode(newCharacterAscii);
-    }
-  });
+	for (let letter of plainText) {
+		const newCharacterAscii = (letter.charCodeAt() + 3) % 127;
+		cipherText +=
+			newCharacterAscii < 32
+				? String.fromCharCode(32 + newCharacterAscii)
+				: String.fromCharCode(newCharacterAscii);
+	}
 
-  return cipherText;
+	return cipherText;
 };
 
-const caeserDecrypt = (cipherText) => {
-  let plainText = '';
-  [...cipherText].forEach((character) => {
-    const originalCharacterAscii = (character.charCodeAt() - 3) % 127;
+const caeserDecrypt = cipherText => {
+	let plainText = '';
 
-    if (originalCharacterAscii < 32) {
-      plainText += String.fromCharCode(127 - (32 - originalCharacterAscii));
-    } else {
-      plainText += String.fromCharCode(originalCharacterAscii);
-    }
-  });
+	for (let letter of cipherText) {
+		const originalCharacterAscii = (letter.charCodeAt() - 3) % 127;
 
-  return plainText;
+		plainText +=
+			originalCharacterAscii < 32
+				? String.fromCharCode(127 - (32 - originalCharacterAscii))
+				: String.fromCharCode(originalCharacterAscii);
+	}
+
+	return plainText;
 };
 
 module.exports = { caeserEncrypt, caeserDecrypt };
