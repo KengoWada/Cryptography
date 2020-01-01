@@ -88,21 +88,47 @@ These are cryptosystems where the encryption key differs from the decryption key
 
 - To decode a message encrypted with a Caesar cipher, it is necessary to shift each letter in the ciphertext left by three steps to reach the original plaintext letter, so A becomes X, D becomes A, etc.
 
-- Since this does not account for special characters such as **`'%', '*'`**, I will be using ASCII values from **`32`** to **`126`**
-
-- Certain character such as **`'ð', '̉ß'`** are not catered for
-
 ### Example
 
-```
-plaintext - 'Kengo'
+```plaintext
+plaintext - 'KENGO'
 'K' - 'N'
-'e' - 'h'
-'n' - 'q'
-'g' - 'j'
-'o' - 'r'
-ciphertext - 'Nhqjr'
+'E' - 'H'
+'N' - 'Q'
+'G' - 'J'
+'O' - 'R'
+ciphertext - 'NHQJR'
 ```
+
+## The Vigenère’s Cipher
+
+Vigenère’s cipher was invented in the 16th century and was considered secure until well into the twentieth century despite attacks being developed in the 19th century by the British mathematician Charles Babbage and the German cryptographer Friedrich Kasiski.
+
+The successful use of Vigenère’s cipher is dependent on the same key being known by the sender of the encrypted message and the receiver. This is why the key is often known as a shared secret.
+
+### Encryption
+
+- Choose a key length and then a set of characters to match the key length
+
+- Conver the plaintect and key to integers. You can base this on alphabetic positions e.g A=0, B=1, ..., Z=25.
+
+- Repeat the key, if necessary, until it's the length of the plaintext
+
+- Add the values of the of the key to the values of the plaintext and take the modulus of the sums. In this case mod 26
+
+- Convert the values back to characters.
+
+### Decryption
+
+- Choose a key length and then a set of characters to match the key length
+
+- Conver the cipher text and key to integers. You can base this on alphabetic positions e.g A=0, B=1, ..., Z=25.
+
+- Repeat the key, if necessary, until it's the length of the plaintext
+
+- Subtract the values of the key from the cipher text and take the modulus e.g mod 26
+
+- Convert the values back to characters
 
 ## Implementation
 
