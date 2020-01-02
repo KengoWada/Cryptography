@@ -118,6 +118,20 @@ The successful use of Vigenère’s cipher is dependent on the same key being kn
 
 - Convert the values back to characters.
 
+```plaintext
+Plaintext - THISISATEST
+Key - VECTOR
+
+Plaintext:  THISISATEST → 19 07 08 18 08 18 00 19 04 18 19
+Key:        VECTORVECTO → 21 04 02 19 14 17 21 04 02 19 14
+                          ————————————————————————————————
+            +             40 11 10 37 22 35 21 23 06 37 33
+            (mod 26)      14 11 10 11 22 09 21 23 06 11 07
+Ciphertext:               O  L  K  L  W  J  V  X  G  L  H
+
+Ciphertext - OLKLWJVXGLH
+```
+
 ### Decryption
 
 - Choose a key length and then a set of characters to match the key length
@@ -126,9 +140,25 @@ The successful use of Vigenère’s cipher is dependent on the same key being kn
 
 - Repeat the key, if necessary, until it's the length of the plaintext
 
-- Subtract the values of the key from the cipher text and take the modulus e.g mod 26
+- Subtract the values of the key from the cipher text, add 26 and then take the modulus e.g mod 26
 
 - Convert the values back to characters
+
+```plaintext
+Ciphertext - OLKLWJVXGLH
+Key - VECTOR
+
+Ciphertext:  OLKNWLVXGNH → 14 11 10 11 22 09 21 23 06 11 07
+Key:         VECTORVECTO → 21 04 02 19 14 17 21 04 02 19 14
+                           ————————————————————————————————
+             -             -7 07 08 -8 08 -8 00 19 04 -8 -7
+             (add 26)      19 33 34 18 34 18 26 45 30 18 19
+                           ————————————————————————————————
+             (mod 26)      19 07 08 18 08 18 00 19 04 18 19
+Plaintext:                 T  H  I  S  I  S  A  T  E  S  T
+
+Plaintext - THISISATEST
+```
 
 ## Implementation
 
