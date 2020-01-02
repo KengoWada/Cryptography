@@ -48,8 +48,3 @@ function viginereDecrypt(cipherText) {
 }
 
 module.exports = { viginereEncrypt, viginereDecrypt };
-
-// console.log(viginereEncrypt('THISISATEST').cipherText);
-// console.log('OLKLWJVXGLH');
-
-// console.log(viginereDecrypt('OLKLWJVXGLH').plainText);
