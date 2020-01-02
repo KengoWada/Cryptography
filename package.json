@@ -9,7 +9,8 @@
             "coverage/*",
             ".nyc_output/*",
             "tests/*",
-            "crypto.js"
+            "crypto.js",
+            "utils/index.js"
         ]
     },
     "scripts": {

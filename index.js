@@ -11,6 +11,21 @@ function execute(message, functionName) {
         console.log(functionName(input));
         readLine.close();
     });
+    return;
+}
+
+function runAlgorithm(encryptionFunc, decryptionFunc) {
+    readLine.question('Enter 0 to encrypt or 1 to decrypt: ', input => {
+        if (input === '0') {
+            execute('Enter plain text to encrypt: ', encryptionFunc);
+        } else if (input === '1') {
+            execute('Enter cipher text to decrypt: ', decryptionFunc);
+        } else {
+            console.log('Enter either 0 or 1');
+            readLine.close();
+        }
+    });
+    return;
 }
 
 console.log('IMPLEMENTED ALGORITHMS');
@@ -21,30 +36,13 @@ readLine.question('Enter encryption algorithm number: ', answer => {
     switch (answer) {
         // Caeser Cipher
         case '1': {
-            readLine.question('Enter 0 to encrypt or 1 to decrypt: ', input => {
-                if (input === '0') {
-                    execute('Enter plain text to encrypt: ', caeserEncrypt);
-                } else if (input === '1') {
-                    execute('Enter cipher text to decrypt: ', caeserDecrypt);
-                } else {
-                    console.log('Enter either 0 or 1');
-                    readLine.close();
-                }
-            });
+            runAlgorithm(caeserEncrypt, caeserDecrypt);
             break;
         }
         // Vigenère's Cipher
         case '2': {
-            readLine.question('Enter 0 to encrypt or 1 to decrypt: ', input => {
-                if (input === '0') {
-                    execute('Enter plain text to encrypt: ', viginereEncrypt);
-                } else if (input === '1') {
-                    execute('Enter cipher text to decrypt: ', viginereDecrypt);
-                } else {
-                    console.log('Enter either 0 or 1');
-                    readLine.close();
-                }
-            });
+            runAlgorithm(viginereEncrypt, viginereDecrypt);
+            break;
         }
         default:
             console.log('Invalid cypher name.');
