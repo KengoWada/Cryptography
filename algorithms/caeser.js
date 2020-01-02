@@ -1,31 +1,4 @@
-const letters = [
-    'A',
-    'B',
-    'C',
-    'D',
-    'E',
-    'F',
-    'G',
-    'H',
-    'I',
-    'J',
-    'K',
-    'L',
-    'M',
-    'N',
-    'O',
-    'P',
-    'Q',
-    'R',
-    'S',
-    'T',
-    'U',
-    'V',
-    'W',
-    'X',
-    'Y',
-    'Z',
-];
+const { LETTERS_ARRAY } = require('./constants');
 
 function caeserEncrypt(plainText) {
     let cipherText = '';
@@ -40,16 +13,14 @@ function caeserEncrypt(plainText) {
     }
 
     for (let letter of plainText) {
-        const newCharacterIndex = (letters.indexOf(letter) + 3) % 26;
-        cipherText += letters[newCharacterIndex];
+        const newCharacterIndex = (LETTERS_ARRAY.indexOf(letter) + 3) % 26;
+        cipherText += LETTERS_ARRAY[newCharacterIndex];
     }
 
     return { message: 'Done', cipherText, plainText };
 }
 
 function caeserDecrypt(cipherText) {
-    let plainText = '';
-
     regex = /^[A-Z]+$/;
     if (!regex.test(cipherText)) {
         return {
@@ -58,18 +29,17 @@ function caeserDecrypt(cipherText) {
         };
     }
 
+    let plainText = '';
+
     for (let letter of cipherText) {
-        let newCharacterIndex = letters.indexOf(letter) - 3;
+        let newCharacterIndex = LETTERS_ARRAY.indexOf(letter) - 3;
         if (newCharacterIndex < 0) {
             newCharacterIndex = 26 + newCharacterIndex;
         }
-        plainText += letters[newCharacterIndex];
+        plainText += LETTERS_ARRAY[newCharacterIndex];
     }
 
     return { message: 'Done', cipherText, plainText };
 }
 
 module.exports = { caeserEncrypt, caeserDecrypt };
-
-// console.log(caeserEncrypt('xyz'));
-console.log(caeserDecrypt('ABC'));
