@@ -5,6 +5,7 @@ const readLine = require('readline').createInterface({
 
 const { caeserEncrypt, caeserDecrypt } = require('./algorithms/caeser');
 const { viginereEncrypt, viginereDecrypt } = require('./algorithms/vigenere');
+const { playfairEncrypt, playfairDecrypt } = require('./algorithms/playfair');
 
 function execute(message, functionName) {
     readLine.question(message, input => {
@@ -31,6 +32,7 @@ function runAlgorithm(encryptionFunc, decryptionFunc) {
 console.log('IMPLEMENTED ALGORITHMS');
 console.log('[1]. Caeser Cipher');
 console.log("[2]. Viginère's Cipher");
+console.log('[3]. Playfair Cipher');
 
 readLine.question('Enter encryption algorithm number: ', answer => {
     switch (answer) {
@@ -42,6 +44,10 @@ readLine.question('Enter encryption algorithm number: ', answer => {
         // Vigenère's Cipher
         case '2': {
             runAlgorithm(viginereEncrypt, viginereDecrypt);
+            break;
+        }
+        case '3': {
+            runAlgorithm(playfairEncrypt, playfairDecrypt);
             break;
         }
         default:
