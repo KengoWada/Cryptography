@@ -1,4 +1,4 @@
-const { LETTERS, LETTERS_ARRAY } = require('./constants');
+const { LETTERS, LETTERS_ARRAY } = require('../utils/constants');
 
 const KEY = 'SOMEVERYSECRETKEY';
 // const KEY = 'VECTOR';

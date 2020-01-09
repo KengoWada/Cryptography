@@ -10,7 +10,7 @@
             ".nyc_output/*",
             "tests/*",
             "crypto.js",
-            "utils/index.js"
+            "utils/constants.js"
         ]
     },
     "scripts": {

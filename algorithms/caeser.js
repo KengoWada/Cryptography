@@ -1,4 +1,4 @@
-const { LETTERS_ARRAY } = require('./constants');
+const { LETTERS_ARRAY } = require('../utils/constants');
 
 function caeserEncrypt(plainText) {
     let cipherText = '';
