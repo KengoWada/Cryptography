@@ -69,18 +69,13 @@ function generateDigrams(text) {
 function getRowCol(digram, matrix) {
     let a, b;
     for (let i = 0; i < matrix.length; i++) {
-        const col = matrix[i].indexOf(digram[0]);
-        if (col >= 0) {
-            a = { row: i, col };
-            break;
+        const colA = matrix[i].indexOf(digram[0]);
+        const colB = matrix[i].indexOf(digram[1]);
+        if (colA >= 0) {
+            a = { row: i, colA };
         }
-    }
-
-    for (let i = 0; i < matrix.length; i++) {
-        const col = matrix[i].indexOf(digram[1]);
-        if (col >= 0) {
-            b = { row: i, col };
-            break;
+        if (colB >= 0) {
+            b = { row: i, colB };
         }
     }
 
