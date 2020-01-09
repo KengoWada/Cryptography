@@ -72,10 +72,10 @@ function getRowCol(digram, matrix) {
         const colA = matrix[i].indexOf(digram[0]);
         const colB = matrix[i].indexOf(digram[1]);
         if (colA >= 0) {
-            a = { row: i, colA };
+            a = { row: i, col: colA };
         }
         if (colB >= 0) {
-            b = { row: i, colB };
+            b = { row: i, col: colB };
         }
     }
 
