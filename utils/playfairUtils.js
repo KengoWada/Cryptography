@@ -67,10 +67,11 @@ function generateDigrams(text) {
  * @return {Object} Contains properties a and b that contain the row and column of the first and second elements of the digram respectively.
  */
 function getRowCol(digram, matrix) {
-    let a, b;
-    for (let i = 0; i < matrix.length; i++) {
-        const colA = matrix[i].indexOf(digram[0]);
-        const colB = matrix[i].indexOf(digram[1]);
+    const len = matrix.length;
+    let a, b, colA, colB;
+    for (let i = 0; i < len; i++) {
+        colA = matrix[i].indexOf(digram[0]);
+        colB = matrix[i].indexOf(digram[1]);
         if (colA >= 0) {
             a = { row: i, col: colA };
         }
