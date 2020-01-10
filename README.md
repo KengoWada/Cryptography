@@ -160,6 +160,34 @@ Plaintext:                 T  H  I  S  I  S  A  T  E  S  T
 Plaintext - THISISATEST
 ```
 
+## Playfair Cipher
+
+The Playfair cipher uses a 5x5 matrix of letters for encryption and decryption. The secrets in the Playfair cipher are a keyword and the method by which the 5x5 matrix is filled.
+
+### Encyption
+
+To encrypt a message with the Playfair cipher, it must be broken into sets of two letters or digrams. For each of these digrams, the following rules are applied.
+
+- If both letters are the same or only one letter remains (at the end of the message or a sentence within it), replace the second letter with an X and move to the next step.
+
+- If both letters are in the same row of the matrix, replace each with the letter to its right (wrapping around to the beginning of the row if necessary) and move on to the next digram
+
+- If both letters are in the same column of the matrix, replace each with the letter below (wrapping around to the top of the column if necessary) and move on to the next digram
+
+- If neither of the previous two rules are true, create a rectangle on the grid with the two letters at its corners. Replace each letter of the digram with the letter on the corner of the rectangle that is on the same row.
+
+### Decryption
+
+To decrypt with the Playfair cipher, the same matrix is used. In decryption, the reverse of the encryption operations are performed. These are as follows:
+
+- If both letters are in the same row of the matrix, replace each with the letter to its left (wrapping around to the beginning of the row if necessary) and move on to step 4
+
+- If both letters are in the same column of the matrix, replace each with the letter above (wrapping around to the top of the column if necessary) and move on to step 4
+
+- If neither of the previous two rules are true, create a rectangle on the grid with the two letters at its corners. Replace each letter of the digram with the letter on the corner of the rectangle that is on the same row.
+
+- If the second letter is an X, evaluate whether or not it makes sense to be an X based on context. If not, replace it with the first letter or drop it (if the last letter of the message)
+
 ## Implementation
 
 I will be implementing the algorithms in JavaScript.
