@@ -164,7 +164,7 @@ Plaintext - THISISATEST
 
 The Playfair cipher uses a 5x5 matrix of letters for encryption and decryption. The secrets in the Playfair cipher are a keyword and the method by which the 5x5 matrix is filled.
 
-### Encyption
+### Playfair Encryption
 
 To encrypt a message with the Playfair cipher, it must be broken into sets of two letters or digrams. For each of these digrams, the following rules are applied.
 
@@ -176,7 +176,7 @@ To encrypt a message with the Playfair cipher, it must be broken into sets of tw
 
 - If neither of the previous two rules are true, create a rectangle on the grid with the two letters at its corners. Replace each letter of the digram with the letter on the corner of the rectangle that is on the same row.
 
-### Decryption
+### Playfair Decryption
 
 To decrypt with the Playfair cipher, the same matrix is used. In decryption, the reverse of the encryption operations are performed. These are as follows:
 
